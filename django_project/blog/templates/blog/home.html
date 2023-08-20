@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
+    {% if title %}
+        <title>Django Blog - {{ title }}</title>
+    {% else %}
+        <title>Django Blog</title>
+    {% endif %}
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,5 +40,14 @@
         <p>Welcome to my blog! Here, you'll find a variety of articles and posts on different topics.</p>
         <p>Feel free to explore and enjoy the content.</p>
     </main>
+    <hr>
+    <div>
+        {% for post in posts %}
+            <h3>{{ post.title }}</h3>
+            <p>By {{ post.author }} on {{ post.date_posted }}</p>
+            <p>{{ post.content }}</p>
+            <hr>
+        {% endfor %}
+    </div>
 </body>
 </html>
