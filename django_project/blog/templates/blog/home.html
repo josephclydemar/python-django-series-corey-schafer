@@ -1,53 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if title %}
-        <title>Django Blog - {{ title }}</title>
-    {% else %}
-        <title>Django Blog</title>
-    {% endif %}
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-        }
-    </style>
-</head>
-<body>
+{% extends 'blog/base.html' %}
+{% block content %}
     <header>
-        <h1>Welcome to My Blog</h1>
+        <h1>Blog - Home</h1>
     </header>
     <main>
-        <h2>Blog Home</h2>
+        <h2>Welcome to My Blog</h2>
         <p>Welcome to my blog! Here, you'll find a variety of articles and posts on different topics.</p>
         <p>Feel free to explore and enjoy the content.</p>
     </main>
-    <hr>
-    <div>
-        {% for post in posts %}
-            <h3>{{ post.title }}</h3>
-            <p>By {{ post.author }} on {{ post.date_posted }}</p>
-            <p>{{ post.content }}</p>
-            <hr>
-        {% endfor %}
-    </div>
-</body>
-</html>
+    {% for post in posts %}
+        <hr>
+        <h3>{{ post.title }}</h3>
+        <p>By {{ post.author }} on {{ post.date_posted }}</p>
+        <p>{{ post.content }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
