@@ -3,3 +3,5 @@ DJANGO TUTORIAL:
     Corey Schafer
     Matt Freire
     Chuck Severance
+
+django_series_corey_schafer
