@@ -1,0 +1,5 @@
+DJANGO TUTORIAL:
+    Traversy Media
+    Corey Schafer
+    Matt Freire
+    Chuck Severance
