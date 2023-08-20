@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+# from django.http import HttpResponse
 
 posts = [
     {
@@ -45,4 +45,5 @@ def about(request):
     return render(request, 'blog/about.html', context)
 
 def contacts(request):
-    return HttpResponse('<h3>Blog Contacts HAHA..</h3>')
+    # return HttpResponse('<h3>Blog Contacts HAHA..</h3>')
+    return render(request, 'blog/contacts.html', { 'title': 'Contacts' })

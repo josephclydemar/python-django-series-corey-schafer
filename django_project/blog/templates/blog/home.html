@@ -5,14 +5,18 @@
     </header>
     <main>
         <h2>Welcome to My Blog</h2>
-        <p>Welcome to my blog! Here, you'll find a variety of articles and posts on different topics.</p>
-        <p>Feel free to explore and enjoy the content.</p>
+        <p>Welcome to my blog! Here, you'll find a variety of articles and posts on different topics. Feel free to explore and enjoy the content.</p>
     </main>
     {% for post in posts %}
-        <hr>
-        <h3>{{ post.title }}</h3>
-        <p>By {{ post.author }} on {{ post.date_posted }}</p>
-        <p>{{ post.content }}</p>
-        <hr>
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">{{ post.author }}</a>
+                    <small class="text-muted">{{ post.date_posted }}</small>
+                </div>
+                <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
     {% endfor %}
 {% endblock %}
